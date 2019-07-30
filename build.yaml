@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      build_web_compilers|entrypoint:
+        release_options:
+          dart2js_args:
+            - -O1
+            - --csp
+
+# Enable dart2js sourcemaps
+global_options:
+  build_web_compilers|dart_source_cleanup:
+    release_options:
+      enabled: false
+  build_web_compilers|dart2js_archive_extractor:
+    release_options:
+      filter_outputs: false
